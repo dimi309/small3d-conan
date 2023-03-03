@@ -1,6 +1,6 @@
 from conan import ConanFile, tools
 from conan.tools.cmake import CMake, CMakeToolchain, cmake_layout, CMakeDeps
-from conan.tools.files import copy, collect_libs
+from conan.tools.files import copy, collect_libs, get
 import os
 import shutil
 
@@ -36,7 +36,6 @@ class Small3dConan(ConanFile):
             self.requires("glew/2.2.0")
 
     def source(self):
-        def source(self):
         get(self, **self.conan_data["sources"][self.version], strip_root=True)
         shutil.copy("cmakefiles/src.CMakeLists.txt", "src/CMakeLists.txt")
         shutil.copy("cmakefiles/CMakeLists.txt", "CMakeLists.txt")
