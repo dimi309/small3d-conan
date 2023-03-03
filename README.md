@@ -1,12 +1,20 @@
 small3d conan package
+=====================
 
 Deployment
-==========
+----------
 
-In order to deploy the package locally, perform the following steps:
+In order to deploy the package locally, first deploy my variation of the
+portaudio package to your local cache:
+
+	git clone https://github.com/dimi309/portaudio-conan
+	cd portaudio-conan
+	conan export . --version=19.7.0
+
+Then deploy the small3d package:
 
 	git clone https://github.com/dimi309/small3d-conan
 	cd small3d-conan
 	conan export .
 	
-You can then use it as conan requirement `small3d/master`
+You can then use small3d as conan requirement `small3d/master`
