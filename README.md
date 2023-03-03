@@ -1,3 +1,12 @@
-Sorry for the disruption.
+small3d conan package
 
-The new conan small3d package is coming soon...
+Deployment
+==========
+
+In order to deploy the package locally, perform the following steps:
+
+	git clone https://github.com/dimi309/small3d-conan
+	cd small3d-conan
+	conan export .
+	
+You can then use it as conan requirement `small3d/master`
