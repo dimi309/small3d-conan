@@ -1,0 +1,5 @@
+sources:
+  master:
+    url:
+      - https://github.com/dimi309/small3d/archive/refs/heads/master.zip
+        
