@@ -15,12 +15,6 @@ else()
   list(APPEND HEADER_FILES ${CMAKE_CURRENT_SOURCE_DIR}/vulkan_helper.h)
 endif()
 
-get_cmake_property(_variableNames VARIABLES)
-list (SORT _variableNames)
-foreach (_variableName ${_variableNames})
-    message(STATUS "${_variableName}=${${_variableName}}")
-endforeach()
-
 add_library(small3d ${SOURCE_FILES} ${HEADER_FILES})
 
 if(NOT SMALL3D_OPENGL)
