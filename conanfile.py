@@ -65,7 +65,7 @@ class Small3dConan(ConanFile):
                 else:
                     debug_info = "-g"
                 self.run("cd ../resources/shaders && glslangValidator -V perspectiveMatrixLightedShader.vert -o perspectiveMatrixLightedShader.spv "+ debug_info +
-                             " && glslangValidator -V textureShader.frag -o textureShader.spv " + debug_info, "resources/shaders")
+                             " && glslangValidator -V textureShader.frag -o textureShader.spv " + debug_info)
 
     def package(self):
         if self.options.vulkan:
