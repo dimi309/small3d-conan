@@ -8,7 +8,7 @@ endif()
 if(SMALL3D_OPENGL)
   add_compile_definitions(SMALL3D_OPENGL)
   find_package(glew)
-  add_compile_definitions(glew_COMPILE_DEFINITIONS_RELEASE)
+  add_compile_definitions(${glew_COMPILE_DEFINITIONS_RELEASE})
 endif()
 
 
