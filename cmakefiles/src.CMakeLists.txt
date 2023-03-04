@@ -22,4 +22,3 @@ if(NOT SMALL3D_OPENGL)
 else()
   target_include_directories(small3d PUBLIC ${CMAKE_INCLUDE_PATH} ${CMAKE_SOURCE_DIR}/opengl/include/small3d ${CMAKE_SOURCE_DIR}/include/small3d)
 endif()
-
