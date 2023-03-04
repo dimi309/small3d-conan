@@ -46,7 +46,6 @@ class Small3dConan(ConanFile):
         tc = CMakeToolchain(self)
         if not self.options.vulkan:
             tc.variables["SMALL3D_OPENGL"] = True
-            print('NO VULKAN*******************************')
         tc.generate()
         
     def layout(self):
