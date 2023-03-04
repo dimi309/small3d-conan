@@ -62,5 +62,3 @@ class Small3dConan(ConanFile):
     def package_info(self):
         self.cpp_info.libs = collect_libs(self)
         self.cpp_info.defines = ["SMALL3D_OPENGL"]
-        if self.settings.os == "Windows" and self.settings.compiler == "gcc" and not self.options.shared:
-            self.cpp_info.system_libs.append("setupapi") # This should normally be in the portaudio package
