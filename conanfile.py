@@ -64,7 +64,7 @@ class Small3dConan(ConanFile):
                     debug_info = "-g0"
                 else:
                     debug_info = "-g"
-                self.run("cd ../resources/shaders && glslangValidator -V perspectiveMatrixLightedShader.vert -o perspectiveMatrixLightedShader.spv "+ debug_info +
+                self.run("cd ../../resources/shaders && glslangValidator -V perspectiveMatrixLightedShader.vert -o perspectiveMatrixLightedShader.spv "+ debug_info +
                              " && glslangValidator -V textureShader.frag -o textureShader.spv " + debug_info)
 
     def package(self):
