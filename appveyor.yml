@@ -29,9 +29,7 @@ for:
   - cd portaudio-conan
   - conan export . --version=19.7.0
   - cd ../small3d-conan
-  - conan create . --build=missing
-  - git clean -fdx
-
+  - conan create . --build=missing -c tools.system.package_manager:mode=install -c tools.system.package_manager:sudo=True
 
 -
   matrix:
