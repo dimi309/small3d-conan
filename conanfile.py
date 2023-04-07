@@ -22,7 +22,7 @@ class Small3dConan(ConanFile):
     requires = "bzip2/1.0.8", "freetype/2.11.1", "glfw/3.3.8", "glm/0.9.9.8", "libpng/1.6.39", "vorbis/1.3.7", "zlib/1.2.13", "portaudio/19.7.0", "glew/2.2.0"
 
     # Sources are located in the same place as this recipe, copy them to the recipe
-    exports_sources = "cmakefiles/CMakeLists.txt", "cmakefiles/src.CMakeLists.txt", "src*", "include*", "scripts*", "resources*", "opengl*", "LICENSE"
+    exports_sources = "cmakefiles/CMakeLists.txt", "cmakefiles/src.CMakeLists.txt", "src*", "include*", "scripts*", "resources*", "LICENSE"
 
     def config_options(self):
         if self.settings.os == "Windows":
@@ -48,9 +48,8 @@ class Small3dConan(ConanFile):
         cmake.build()
 
     def package(self):
-        copy(self, "*", dst=os.path.join(self.package_folder, "bin/resources/shaders"), src=os.path.join(self.source_folder, "opengl/resources/shaders"))
-        copy(self, "*.hpp", dst=os.path.join(self.package_folder, "include"), src=os.path.join(self.source_folder, "include"), excludes="Renderer.*p")
-        copy(self, "*.hpp", dst=os.path.join(self.package_folder, "include"), src=os.path.join(self.source_folder, "opengl/include"))
+        copy(self, "*", dst=os.path.join(self.package_folder, "bin/resources/shaders"), src=os.path.join(self.source_folder, "resources/shaders"))
+        copy(self, "*.hpp", dst=os.path.join(self.package_folder, "include"), src=os.path.join(self.source_folder, "include"))
 
         copy(self, pattern="*.lib", dst=os.path.join(self.package_folder, "lib"), src=self.source_folder, keep_path=False)
         copy(self, pattern="*.a", dst=os.path.join(self.package_folder, "lib"), src=self.source_folder, keep_path=False)
