@@ -37,7 +37,6 @@ class Small3dConan(ConanFile):
         deps = CMakeDeps(self)
         deps.generate()
         tc = CMakeToolchain(self)
-        tc.variables["SMALL3D_OPENGL"] = True
         tc.generate()
         
     def layout(self):
@@ -58,4 +57,3 @@ class Small3dConan(ConanFile):
 
     def package_info(self):
         self.cpp_info.libs = collect_libs(self)
-
