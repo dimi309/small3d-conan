@@ -58,4 +58,4 @@ class Small3dConan(ConanFile):
 
     def package_info(self):
         self.cpp_info.libs = collect_libs(self)
-        self.cpp_info.defines = ["SMALL3D_OPENGL"]
+

@@ -7,8 +7,6 @@ from conan.tools.build import can_run
 
 class Small3dTestConan(ConanFile):
     settings = "os", "compiler", "build_type", "arch"
-    options = {"vulkan": [True, False]}
-    default_options = {"vulkan": False}
     generators = "CMakeDeps", "CMakeToolchain"
 
     def requirements(self):
