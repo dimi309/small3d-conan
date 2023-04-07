@@ -19,11 +19,4 @@ Then deploy the small3d package:
 	
 You can then use small3d as conan requirement `small3d/master`
 
----
-**NOTE**
 
-The conan small3d package no longer supports Vulkan. You can always 
-use Vulkan with small3d if you build small3d with plain cmake. You
-can do so using the scripts available in the [main small3d repository](https://github.com/dimi309/small3d).
-
----
