@@ -1,8 +1,4 @@
 file(GLOB SOURCE_FILES *.cpp)
-list(REMOVE_ITEM SOURCE_FILES ${CMAKE_CURRENT_SOURCE_DIR}/unit_tests.cpp)
-list(REMOVE_ITEM SOURCE_FILES ${CMAKE_CURRENT_SOURCE_DIR}/OctPyramid.cpp)
-list(REMOVE_ITEM SOURCE_FILES ${CMAKE_CURRENT_SOURCE_DIR}/UnitTests.cpp)
-
 file(GLOB HEADER_FILES ${CMAKE_SOURCE_DIR}/include/small3d/*.hpp)
 
 add_library(small3d ${SOURCE_FILES} ${HEADER_FILES})
@@ -22,9 +18,6 @@ target_include_directories(small3d PUBLIC ${CMAKE_INCLUDE_PATH} ${CMAKE_SOURCE_D
 target_link_libraries(small3d PUBLIC
   ${glew_LIBRARIES}
   ${opengl_system_LIBRARIES}
-  )
-
-target_link_libraries(small3d PUBLIC
   ${glfw3_LIBRARIES}
   ${libpng_LIBRARIES_RELEASE}
   ${vorbis_LIBRARIES_RELEASE}
@@ -32,3 +25,10 @@ target_link_libraries(small3d PUBLIC
   ${portaudio_LIBRARIES}
   ${freetype_LIBRARIES}
   )
+
+if(MSVC)
+  target_compile_definitions(small3d PRIVATE CRT_SECURE_NO_WARNINGS)
+endif()
+
+target_compile_definitions(small3d PRIVATE ${glew_COMPILE_DEFINITIONS_RELEASE})
+
