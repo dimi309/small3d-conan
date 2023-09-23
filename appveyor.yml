@@ -47,7 +47,7 @@ for:
   - cd portaudio-conan
   - conan export . --version=19.7.0
   - cd ../small3d-conan
-  - conan create . --build=missing
+  - conan create . -s compiler.cppstd=gnu17 --build=missing
   - git clean -fdx
  
 -
