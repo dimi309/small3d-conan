@@ -15,8 +15,8 @@ Then deploy the small3d package:
 
 	git clone https://github.com/dimi309/small3d-conan
 	cd small3d-conan
-	conan export .
+	conan export . --version=1.8016 (or master)
 	
-You can then use small3d as conan requirement `small3d/master`
+You can then use small3d as conan requirement `small3d/1.8016` or `small3d/master`
 
 
