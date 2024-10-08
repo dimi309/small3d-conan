@@ -1,5 +1,6 @@
 sources:
-  master:
-    url:
-      - https://github.com/dimi309/small3d/archive/refs/heads/master.zip
-        
+  "master":
+    url: "https://github.com/dimi309/small3d/archive/refs/heads/master.zip"
+  "1.8016":
+    sha256: "87F66A24B5E1E98DA7C1823825D45E899637767B9C5FB6BDAAC8C80155C8C579"
+    url: "https://github.com/dimi309/small3d/archive/refs/tags/1.8016.last.mobile.tar.gz"

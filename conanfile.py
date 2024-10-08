@@ -7,7 +7,6 @@ import shutil
 class Small3dConan(ConanFile):
     name = "small3d"
     license = "BSD 3-Clause"
-    version = "master"
     author = "dimi309"
     url = "https://github.com/dimi309/small3d-conan"
     description = "Minimalistic, open source library for making 3D games in C++"
