@@ -18,7 +18,7 @@ class Small3dConan(ConanFile):
     default_options = {"shared": False, "fPIC": True}
 
     # WARNING: There is an issue with the conan build of freetype/2.12.1 so it is not being used.
-    requires = "freetype/2.13.0", "glfw/3.4", "glm/0.9.9.8", "libpng/1.6.40", "vorbis/1.3.7", "zlib/1.2.13", "portaudio/19.7.0", "glew/2.2.0", "cereal/1.3.2"
+    requires = "freetype/2.13.0", "glfw/3.4", "libpng/1.6.40", "vorbis/1.3.7", "zlib/1.2.13", "portaudio/19.7.0", "glew/2.2.0", "cereal/1.3.2"
 
     # Sources are located in the same place as this recipe, copy them to the recipe
     exports_sources = "cmakefiles/CMakeLists.txt", "cmakefiles/src.CMakeLists.txt", "src*", "include*", "scripts*", "resources*", "LICENSE"
@@ -26,6 +26,9 @@ class Small3dConan(ConanFile):
     def config_options(self):
         if self.settings.os == "Windows":
             del self.options.fPIC
+
+    def requirements(self):
+        self.requires("glm/0.9.9.8", transitive_headers=True)
    
     def source(self):
         get(self, **self.conan_data["sources"][self.version], strip_root=True)
