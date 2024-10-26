@@ -17,7 +17,7 @@ class Small3dConan(ConanFile):
     options = {"shared": [True, False], "fPIC": [True, False]}
     default_options = {"shared": False, "fPIC": True}
 
-    requires = "freetype/2.13.3", "glfw/3.4", "libpng/1.6.40", "vorbis/1.3.7", "zlib/1.3.1", "portaudio/19.7.0", "glew/2.2.0", "cereal/1.3.2"
+    requires = "freetype/2.13.3", "glfw/3.4", "libpng/1.6.40", "vorbis/1.3.7", "zlib/1.2.13", "portaudio/19.7.0", "glew/2.2.0", "cereal/1.3.2"
 
     # Sources are located in the same place as this recipe, copy them to the recipe
     exports_sources = "cmakefiles/CMakeLists.txt", "cmakefiles/src.CMakeLists.txt", "src*", "include*", "scripts*", "resources*", "LICENSE"
