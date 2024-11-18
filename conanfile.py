@@ -25,9 +25,6 @@ class Small3dConan(ConanFile):
     def config_options(self):
         if self.settings.os == "Windows":
             del self.options.fPIC
-
-    def requirements(self):
-        self.requires("glm/1.0.1", transitive_headers=True)
    
     def source(self):
         get(self, **self.conan_data["sources"][self.version], strip_root=True)
